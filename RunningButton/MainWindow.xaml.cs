@@ -10,6 +10,10 @@ namespace RunningButton
     /// </summary>
     public partial class MainWindow : Window
     {
+        int x;
+        int y;
+        int z;
+        int q;
         public MainWindow()
         {
             InitializeComponent();
@@ -18,10 +22,10 @@ namespace RunningButton
         private void btN_MouseEnter(object sender, MouseEventArgs e)
         {
             Random random = new Random();
-            int x = random.Next(-100, 100);
-            int y = random.Next(-100, 100);
-            int z = random.Next(-100, 100);
-            int q = random.Next(-100, 100);
+            x = random.Next(-100, 100);
+            y = 0;
+            z = random.Next(-100, 100);
+            q = 0;
             DoubleAnimation buttonAnimation = new DoubleAnimation();
             var animation = new ThicknessAnimation
             {
@@ -33,7 +37,13 @@ namespace RunningButton
 
         private void btN_MouseLeave(object sender, MouseEventArgs e)
         {
-
+            //DoubleAnimation buttonAnimation = new DoubleAnimation();
+            //var animation = new ThicknessAnimation
+            //{
+            //    By = new Thickness(-x, -y, -z, -q),
+            //    Duration = TimeSpan.FromSeconds(0.1)
+            //};
+            //btN.BeginAnimation(MarginProperty, animation);
         }
     }
 }
